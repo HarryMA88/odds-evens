@@ -8,12 +8,14 @@ public class Game {
   private int round = 0;
   private String name;
   private ArtificialIntelligence ai;
+  private Choice choice;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
     ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
+    this.choice = choice;
   }
 
   public void play() {
@@ -41,9 +43,17 @@ public class Game {
       }
       validInput = true;
     }
+    // lets ai play and prints info hand for both human and ai
     MessageCli.PRINT_INFO_HAND.printMessage(name, String.valueOf(fingers));
     ai.play();
     MessageCli.PRINT_INFO_HAND.printMessage(ai.getName(), String.valueOf(ai.getFingers()));
+    // print outcome for the round
+    int sum = fingers + ai.getFingers();
+    if (choice == Main.Choice.EVEN) {
+      if (Utils.isEven(sum)) {
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
+      }
+    }
   }
 
   public void endGame() {}
