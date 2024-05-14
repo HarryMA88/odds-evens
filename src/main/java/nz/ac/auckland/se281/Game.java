@@ -13,16 +13,23 @@ public class Game {
   }
 
   public void play() {
+    // display round and ask for input
     round++;
     MessageCli.START_ROUND.printMessage(String.valueOf(round));
     MessageCli.ASK_INPUT.printMessage();
-    String input = Utils.scanner.nextLine();
-    // check if the input is a number
-    if (!Utils.isInteger(input)) {
-      MessageCli.INVALID_INPUT.printMessage();
-      return;
+
+    // get input until it is valid
+    boolean validInput = false;
+    String input = null;
+    while (!validInput) {
+      input = Utils.scanner.nextLine();
+      // check if the input is a number
+      if (!Utils.isInteger(input)) {
+        MessageCli.INVALID_INPUT.printMessage();
+        continue;
+      }
+      validInput = true;
     }
-    
   }
 
   public void endGame() {}
