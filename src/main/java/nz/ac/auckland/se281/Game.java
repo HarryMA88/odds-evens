@@ -21,10 +21,17 @@ public class Game {
     // get input until it is valid
     boolean validInput = false;
     String input = null;
+    int fingers;
     while (!validInput) {
       input = Utils.scanner.nextLine();
       // check if the input is a number
       if (!Utils.isInteger(input)) {
+        MessageCli.INVALID_INPUT.printMessage();
+        continue;
+      }
+      // check if the input is in the range of the choices
+      fingers = Integer.parseInt(input);
+      if (fingers < 0 || fingers > 5) {
         MessageCli.INVALID_INPUT.printMessage();
         continue;
       }
