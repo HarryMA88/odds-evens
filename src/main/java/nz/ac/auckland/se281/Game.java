@@ -13,6 +13,7 @@ public class Game {
     // the first element of options[0]; is the name of the player
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
+    ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
   }
 
   public void play() {
