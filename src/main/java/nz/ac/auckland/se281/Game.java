@@ -14,6 +14,7 @@ public class Game {
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
     ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
+    ai.play();
   }
 
   public void play() {
