@@ -6,10 +6,12 @@ import nz.ac.auckland.se281.Main.Difficulty;
 /** This class represents the Game is the main entry point. */
 public class Game {
   private int round = 0;
+  private String name;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
-    MessageCli.WELCOME_PLAYER.printMessage(options[0]);
+    name = options[0];
+    MessageCli.WELCOME_PLAYER.printMessage(name);
   }
 
   public void play() {
@@ -21,7 +23,7 @@ public class Game {
     // get input until it is valid
     boolean validInput = false;
     String input = null;
-    int fingers;
+    int fingers = -1;
     while (!validInput) {
       input = Utils.scanner.nextLine();
       // check if the input is a number
@@ -37,6 +39,7 @@ public class Game {
       }
       validInput = true;
     }
+    MessageCli.PRINT_INFO_HAND.printMessage(name, String.valueOf(fingers));
   }
 
   public void endGame() {}
