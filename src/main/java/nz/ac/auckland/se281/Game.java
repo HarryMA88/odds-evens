@@ -15,6 +15,7 @@ public class Game {
   public void play() {
     round++;
     MessageCli.START_ROUND.printMessage(String.valueOf(round));
+    MessageCli.ASK_INPUT.printMessage();
   }
 
   public void endGame() {}
