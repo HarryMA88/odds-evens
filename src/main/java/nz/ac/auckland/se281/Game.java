@@ -43,6 +43,7 @@ public class Game {
     }
     MessageCli.PRINT_INFO_HAND.printMessage(name, String.valueOf(fingers));
     ai.play();
+    MessageCli.PRINT_INFO_HAND.printMessage(ai.getName(), String.valueOf(ai.getFingers()));
   }
 
   public void endGame() {}
