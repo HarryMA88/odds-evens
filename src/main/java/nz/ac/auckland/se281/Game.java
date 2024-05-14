@@ -16,6 +16,13 @@ public class Game {
     round++;
     MessageCli.START_ROUND.printMessage(String.valueOf(round));
     MessageCli.ASK_INPUT.printMessage();
+    String input = Utils.scanner.nextLine();
+    // check if the input is a number
+    if (!Utils.isInteger(input)) {
+      MessageCli.INVALID_INPUT.printMessage();
+      return;
+    }
+    
   }
 
   public void endGame() {}
