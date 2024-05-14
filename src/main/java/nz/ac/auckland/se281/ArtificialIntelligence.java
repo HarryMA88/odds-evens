@@ -13,6 +13,10 @@ public abstract class ArtificialIntelligence {
     this.strategy = strategy;
   }
 
+  public int getFingers() {
+    return this.fingers;
+  }
+
   public abstract void play();
 
 }

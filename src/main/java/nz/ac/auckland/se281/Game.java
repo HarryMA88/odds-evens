@@ -14,7 +14,6 @@ public class Game {
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
     ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
-    ai.play();
   }
 
   public void play() {
@@ -43,6 +42,7 @@ public class Game {
       validInput = true;
     }
     MessageCli.PRINT_INFO_HAND.printMessage(name, String.valueOf(fingers));
+    ai.play();
   }
 
   public void endGame() {}
