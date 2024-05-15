@@ -1,6 +1,9 @@
 package nz.ac.auckland.se281;
 
 import java.util.List;
+
+import nz.ac.auckland.se281.Main.Choice;
+
 import java.util.ArrayList;
 
 public class TopStrategy implements Strategy {
@@ -22,6 +25,7 @@ public class TopStrategy implements Strategy {
 
   @Override
   public void execute() {
+    fingers = -1;
     // load in the memory of the opponents finger histroy
     opponentFingerHistory = ai.getOpponentFingers();
     // check what type of numbers the opponent favours
@@ -37,11 +41,27 @@ public class TopStrategy implements Strategy {
     }
     if (evenNos > oddNos) {
       opponentFavoursEven = true;
+      opponentFavoursOdd = false;
+      noPreference = false;
     } else if (evenNos == oddNos) {
       noPreference = true;
+      opponentFavoursEven = false;
+      opponentFavoursOdd = false;
     } else {
       opponentFavoursOdd = true;
+      opponentFavoursEven = false;
+      noPreference = false;
     }
+    // choose type of number based on win objective
+    Choice objective = ai.getObjective();
+    if (noPreference == true) {
+      fingers = Utils.getRandomNumberRange(0, 5);
+      return;
+    }
+  }
+
+  public int chooseFingers(Choice objective) {
+    return -1;
   }
 
   @Override
