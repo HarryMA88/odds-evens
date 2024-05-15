@@ -11,11 +11,16 @@ public class HardArtificialIntelligence extends ArtificialIntelligence {
 
   @Override
   public void play() {
-    //round++;
-    //if (round > 4) {
-      
-    //}
-    //strategy.execute();
-    //fingers = strategy.getFingers();
+    round++;
+    // after round 3 if the ai lost the previous round switch strategy
+    if (round >= 4) {
+      if (wonPreviousRound == false) {
+        if (strategy instanceof RandomStrategy) {
+          setStrategy(new TopStrategy(this));
+        }
+      }
+    }
+    strategy.execute();
+    fingers = strategy.getFingers();
   }
 }

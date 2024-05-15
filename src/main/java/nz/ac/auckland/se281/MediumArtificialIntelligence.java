@@ -12,6 +12,7 @@ public class MediumArtificialIntelligence extends ArtificialIntelligence {
   @Override
   public void play() {
     round++;
+    // on the 4th round switch to top strategy
     if (round == 4) {
       setStrategy(new TopStrategy(this));
     }
