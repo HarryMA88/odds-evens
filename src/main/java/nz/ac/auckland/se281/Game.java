@@ -55,6 +55,10 @@ public class Game {
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "ODD", ai.getName());
       }
+    } else {
+      if (Utils.isOdd(sum)) {
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
+      } 
     }
   }
 
