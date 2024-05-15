@@ -52,6 +52,8 @@ public class Game {
     if (choice == Main.Choice.EVEN) {
       if (Utils.isEven(sum)) {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
+      } else {
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "ODD", ai.getName());
       }
     }
   }
