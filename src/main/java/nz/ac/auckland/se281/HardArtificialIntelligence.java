@@ -17,6 +17,8 @@ public class HardArtificialIntelligence extends ArtificialIntelligence {
       if (wonPreviousRound == false) {
         if (strategy instanceof RandomStrategy) {
           setStrategy(new TopStrategy(this));
+        } else if (strategy instanceof TopStrategy) {
+          setStrategy(new RandomStrategy());
         }
       }
     }
