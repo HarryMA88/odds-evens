@@ -5,7 +5,7 @@ import nz.ac.auckland.se281.Main.Difficulty;
 
 /** This class represents the Game is the main entry point. */
 public class Game {
-  private int round = 0;
+  private int round = -1;
   private String name;
   private ArtificialIntelligence ai;
   private Choice choice;
@@ -19,6 +19,7 @@ public class Game {
    */
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
+    round = 0;
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
     ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
@@ -72,6 +73,8 @@ public class Game {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "EVEN", ai.getName());
       }
     }
+    // adds the players fingers to the AI's memory
+    ai.addFingers(fingers);
   }
 
   public void endGame() {}

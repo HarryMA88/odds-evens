@@ -7,7 +7,7 @@ public class MediumArtificialIntelligence extends ArtificialIntelligence {
   public void play() {
     round++;
     if (round == 4) {
-      setStrategy(new TopStrategy());
+      setStrategy(new TopStrategy(this));
     }
     strategy.execute();
     fingers = strategy.getFingers();

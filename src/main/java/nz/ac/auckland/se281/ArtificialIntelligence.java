@@ -1,9 +1,13 @@
 package nz.ac.auckland.se281;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class ArtificialIntelligence {
   private String name = "HAL-9000";
   protected Strategy strategy = new RandomStrategy();
   protected int fingers;
+  protected List<Integer> opponentFingerHistory = new ArrayList<Integer>();
 
   /**
    * getter for AI's name.
@@ -30,6 +34,19 @@ public abstract class ArtificialIntelligence {
    */
   public int getFingers() {
     return this.fingers;
+  }
+
+  /**
+   * adds the opponents fingers choice to the AI's memory.
+   * 
+   * @param fingers the number of fingers the opponent chose
+   */
+  public void addFingers(int fingers) {
+    opponentFingerHistory.add(fingers);
+  }
+
+  public List<Integer> getOpponenetFingers() {
+    return this.opponentFingerHistory;
   }
 
   /**
