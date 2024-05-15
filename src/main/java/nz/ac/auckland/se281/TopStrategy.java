@@ -70,6 +70,8 @@ public class TopStrategy implements Strategy {
     if (objective == Main.Choice.EVEN) {
       if (opponentFavoursEven) {
         return Utils.getRandomOddNumber();
+      } else if (opponentFavoursOdd) {
+        return Utils.getRandomEvenNumber();
       }
     }
     return -1;
