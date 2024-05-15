@@ -2,8 +2,9 @@ package nz.ac.auckland.se281;
 
 public class RandomStrategy implements Strategy {
   private int fingers;
+
   @Override
-  public void execute(){
+  public void execute() {
     fingers = Utils.getRandomNumberRange(0, 5);
   }
 

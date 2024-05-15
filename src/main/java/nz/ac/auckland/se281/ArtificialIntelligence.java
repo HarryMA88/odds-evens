@@ -6,7 +6,8 @@ public abstract class ArtificialIntelligence {
   protected int fingers;
 
   /**
-   * getter for AI's name
+   * getter for AI's name.
+   * 
    * @return name of the AI
    */
   public String getName() {
@@ -14,7 +15,8 @@ public abstract class ArtificialIntelligence {
   }
 
   /**
-   * setter for AI's strategy
+   * setter for AI's strategy.
+   * 
    * @param strategy strategy to set
    */
   public void setStrategy(Strategy strategy) {
@@ -22,7 +24,8 @@ public abstract class ArtificialIntelligence {
   }
 
   /**
-   * getter for AI's fingers
+   * getter for AI's fingers.
+   * 
    * @return the amount of fingers the AI chose for this round
    */
   public int getFingers() {
@@ -30,7 +33,7 @@ public abstract class ArtificialIntelligence {
   }
 
   /**
-   * function to let the AI play a round
+   * function to let the AI play a round.
    */
   public abstract void play();
 

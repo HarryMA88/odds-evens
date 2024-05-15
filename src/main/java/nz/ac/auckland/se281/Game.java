@@ -11,7 +11,7 @@ public class Game {
   private Choice choice;
 
   /**
-   * starts a new game with chosen difficulty and win condition
+   * starts a new game with chosen difficulty and win condition.
    * 
    * @param difficulty difficulty for AI
    * @param choice whether the player wants to be ODD or EVEN
@@ -24,8 +24,9 @@ public class Game {
     ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
     this.choice = choice;
   }
+
   /**
-   * starts a new round within the game
+   * starts a new round within the game.
    */
   public void play() {
     // display round and ask for input
