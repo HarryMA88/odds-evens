@@ -81,12 +81,4 @@ public class Game {
 
   public void showStats() {}
 
-  /**
-   * getter for the current round of the game.
-   * 
-   * @return the current round of the game
-   */
-  public int getRound() {
-    return this.round;
-  }
 }
