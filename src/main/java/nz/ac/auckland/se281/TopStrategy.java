@@ -62,15 +62,21 @@ public class TopStrategy implements Strategy {
 
   /**
    * chooses the number of fingers based on the opponent's trend.
-   * 
+   *
    * @param objective the opposite of what the AI needs to make the sum to win
    * @return the number of fingers the AI choose
    */
   public int chooseFingers(Choice objective) {
+    // choose fingers based on the players win condition and trend
+    // if objective is even we need to make it odd, if its odd we need to make it even
     if (objective == Main.Choice.EVEN) {
       if (opponentFavoursEven) {
         return Utils.getRandomOddNumber();
       } else if (opponentFavoursOdd) {
+        return Utils.getRandomEvenNumber();
+      }
+    } else {
+      if (opponentFavoursEven) {
         return Utils.getRandomEvenNumber();
       }
     }
