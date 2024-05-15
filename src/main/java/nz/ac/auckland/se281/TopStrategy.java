@@ -78,6 +78,8 @@ public class TopStrategy implements Strategy {
     } else {
       if (opponentFavoursEven) {
         return Utils.getRandomEvenNumber();
+      } else if (opponentFavoursOdd) {
+        return Utils.getRandomOddNumber();
       }
     }
     return -1;
