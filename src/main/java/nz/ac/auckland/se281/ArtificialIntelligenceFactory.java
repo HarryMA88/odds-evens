@@ -9,6 +9,7 @@ public class ArtificialIntelligenceFactory {
    * factory method to create an instance of the AI.
    * 
    * @param difficulty difficulty for the AI
+   * @param choice the players choice for even or odd
    * @return an instance of the AI
    */
   public static ArtificialIntelligence createArtificialIntelligence(Difficulty difficulty, Choice choice) {

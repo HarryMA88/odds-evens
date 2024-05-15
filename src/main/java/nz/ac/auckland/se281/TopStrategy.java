@@ -1,10 +1,7 @@
 package nz.ac.auckland.se281;
 
 import java.util.List;
-
 import nz.ac.auckland.se281.Main.Choice;
-
-import java.util.ArrayList;
 
 public class TopStrategy implements Strategy {
   private int fingers;
@@ -16,7 +13,7 @@ public class TopStrategy implements Strategy {
 
   /**
    * constructor for the topstrategy strategy.
-   * 
+   *
    * @param ai the ai using the strategy
    */
   public TopStrategy(ArtificialIntelligence ai) {
@@ -53,14 +50,28 @@ public class TopStrategy implements Strategy {
       noPreference = false;
     }
     // choose type of number based on win objective
-    Choice objective = ai.getObjective();
+    Choice sabotage = ai.getSabotage();
+    // if there is no trend in opponents fingers, choose a random number
     if (noPreference == true) {
       fingers = Utils.getRandomNumberRange(0, 5);
       return;
     }
+    // choose fingers based on how to sabotage player's win
+    fingers = chooseFingers(sabotage);
   }
 
+  /**
+   * chooses the number of fingers based on the opponent's trend.
+   * 
+   * @param objective the opposite of what the AI needs to make the sum to win
+   * @return the number of fingers the AI choose
+   */
   public int chooseFingers(Choice objective) {
+    if (objective == Main.Choice.EVEN) {
+      if (opponentFavoursEven) {
+        return Utils.getRandomOddNumber();
+      }
+    }
     return -1;
   }
 

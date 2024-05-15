@@ -10,10 +10,15 @@ public abstract class ArtificialIntelligence {
   protected Strategy strategy = new RandomStrategy();
   protected int fingers;
   protected List<Integer> opponentFingerHistory = new ArrayList<Integer>();
-  protected Choice objective;
+  protected Choice sabotage;
 
+  /**
+   * constructor for Artificial Intelligence.
+   * 
+   * @param choice the players choice (opposite of what AI needs to win)
+   */
   public ArtificialIntelligence(Choice choice) {
-    this.objective = choice;
+    this.sabotage = choice;
   }
 
   /**
@@ -56,8 +61,8 @@ public abstract class ArtificialIntelligence {
     return this.opponentFingerHistory;
   }
 
-  public Choice getObjective() {
-    return this.objective;
+  public Choice getSabotage() {
+    return this.sabotage;
   }
 
   /**
