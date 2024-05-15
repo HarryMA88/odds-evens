@@ -7,6 +7,9 @@ public class TopStrategy implements Strategy {
   private int fingers;
   private ArtificialIntelligence ai;
   private List<Integer> opponentFingerHistory;
+  private boolean opponentFavoursEven = false;
+  private boolean opponentFavoursOdd = false;
+  private boolean noPreference = false;
 
   /**
    * constructor for the topstrategy strategy.
@@ -19,7 +22,26 @@ public class TopStrategy implements Strategy {
 
   @Override
   public void execute() {
-    opponentFingerHistory = ai.getOpponenetFingers();
+    // load in the memory of the opponents finger histroy
+    opponentFingerHistory = ai.getOpponentFingers();
+    // check what type of numbers the opponent favours
+    int evenNos = 0;
+    int oddNos = 0;
+    for (Integer opponentFingers : opponentFingerHistory) {
+      // if the finger is even increase even count, if it is odd increase odd count
+      if (Utils.isEven(opponentFingers)) {
+        evenNos++;
+      } else {
+        oddNos++;
+      }
+    }
+    if (evenNos > oddNos) {
+      opponentFavoursEven = true;
+    } else if (evenNos == oddNos) {
+      noPreference = true;
+    } else {
+      opponentFavoursOdd = true;
+    }
   }
 
   @Override

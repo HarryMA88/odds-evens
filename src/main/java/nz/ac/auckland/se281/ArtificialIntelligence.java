@@ -52,8 +52,12 @@ public abstract class ArtificialIntelligence {
     opponentFingerHistory.add(fingers);
   }
 
-  public List<Integer> getOpponenetFingers() {
+  public List<Integer> getOpponentFingers() {
     return this.opponentFingerHistory;
+  }
+
+  public Choice getObjective() {
+    return this.objective;
   }
 
   /**
