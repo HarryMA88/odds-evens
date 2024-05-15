@@ -10,6 +10,13 @@ public class Game {
   private ArtificialIntelligence ai;
   private Choice choice;
 
+  /**
+   * starts a new game with chosen difficulty and win condition
+   * 
+   * @param difficulty difficulty for AI
+   * @param choice whether the player wants to be ODD or EVEN
+   * @param options player name
+   */
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     name = options[0];
@@ -17,7 +24,9 @@ public class Game {
     ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
     this.choice = choice;
   }
-
+  /**
+   * starts a new round within the game
+   */
   public void play() {
     // display round and ask for input
     round++;
