@@ -3,11 +3,18 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import java.util.List;
 
+import nz.ac.auckland.se281.Main.Choice;
+
 public abstract class ArtificialIntelligence {
   private String name = "HAL-9000";
   protected Strategy strategy = new RandomStrategy();
   protected int fingers;
   protected List<Integer> opponentFingerHistory = new ArrayList<Integer>();
+  protected Choice objective;
+
+  public ArtificialIntelligence(Choice choice) {
+    this.objective = choice;
+  }
 
   /**
    * getter for AI's name.

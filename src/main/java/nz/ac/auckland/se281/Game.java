@@ -22,7 +22,7 @@ public class Game {
     round = 0;
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
-    ai = ArtificialIntelligenceFactory.creatArtificialIntelligence(difficulty);
+    ai = ArtificialIntelligenceFactory.createArtificialIntelligence(difficulty, choice);
     this.choice = choice;
   }
 
