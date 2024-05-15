@@ -11,6 +11,7 @@ public abstract class ArtificialIntelligence {
   protected int fingers;
   protected List<Integer> opponentFingerHistory = new ArrayList<Integer>();
   protected Choice sabotage;
+  protected boolean wonPreviousRound;
 
   /**
    * constructor for Artificial Intelligence.
@@ -63,6 +64,10 @@ public abstract class ArtificialIntelligence {
 
   public Choice getSabotage() {
     return this.sabotage;
+  }
+
+  public void setWonPreviousRound(boolean wonPreviousRound) {
+    this.wonPreviousRound = wonPreviousRound;
   }
 
   /**

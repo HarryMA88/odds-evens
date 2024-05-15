@@ -63,14 +63,18 @@ public class Game {
     if (choice == Main.Choice.EVEN) {
       if (Utils.isEven(sum)) {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
+        ai.setWonPreviousRound(false);
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "ODD", ai.getName());
+        ai.setWonPreviousRound(true);
       }
     } else {
       if (Utils.isOdd(sum)) {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
+        ai.setWonPreviousRound(false);
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "EVEN", ai.getName());
+        ai.setWonPreviousRound(true);
       }
     }
     // adds the players fingers to the AI's memory
