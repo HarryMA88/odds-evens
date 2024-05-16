@@ -100,7 +100,9 @@ public class Game {
     showStats();
     if (PlayerWins > BotWins) {
       MessageCli.PRINT_END_GAME.printMessage(name);
-    }
+    } else if (PlayerWins < BotWins) {
+      MessageCli.PRINT_END_GAME.printMessage(ai.getName());
+    } 
     round = -1;
     PlayerWins = -1;
     BotWins = -1;
