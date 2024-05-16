@@ -91,6 +91,7 @@ public class Game {
     ai.addFingers(fingers);
   }
 
+  /** ends the game and resets the game state. */
   public void endGame() {
     if (round == -1) {
       MessageCli.GAME_NOT_STARTED.printMessage();
@@ -102,11 +103,15 @@ public class Game {
     ai = null;
   }
 
+  /** shows the stats of the game. */
   public void showStats() {
     if (round == -1) {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
     }
-    MessageCli.PRINT_PLAYER_WINS.printMessage(name, String.valueOf(PlayerWins), String.valueOf(BotWins));
+    MessageCli.PRINT_PLAYER_WINS.printMessage(
+        name, String.valueOf(PlayerWins), String.valueOf(BotWins));
+    MessageCli.PRINT_PLAYER_WINS.printMessage(
+        ai.getName(), String.valueOf(BotWins), String.valueOf(PlayerWins));
   }
 }
