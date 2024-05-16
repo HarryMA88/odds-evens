@@ -3,6 +3,7 @@ package nz.ac.auckland.se281;
 import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 
+/** Strategy class for design pattern using top strategy. */
 public class TopStrategy implements Strategy {
   private int fingers;
   private ArtificialIntelligence ai;

@@ -2,6 +2,7 @@ package nz.ac.auckland.se281;
 
 import nz.ac.auckland.se281.Main.Choice;
 
+/** Class for hard difficulty AI. */
 public class HardArtificialIntelligence extends ArtificialIntelligence {
   private int round = 0;
 

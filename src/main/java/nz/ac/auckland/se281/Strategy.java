@@ -1,5 +1,6 @@
 package nz.ac.auckland.se281;
 
+/** Interface for strategy design pattern. */
 public interface Strategy {
   /**
    * implementation of the chosen strategy.

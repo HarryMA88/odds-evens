@@ -2,6 +2,7 @@ package nz.ac.auckland.se281;
 
 import nz.ac.auckland.se281.Main.Choice;
 
+/** Class for medium difficulty AI. */
 public class MediumArtificialIntelligence extends ArtificialIntelligence {
   private int round = 0;
 

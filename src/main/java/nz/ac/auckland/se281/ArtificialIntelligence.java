@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 
+/** Abstract class for the AI. */
 public abstract class ArtificialIntelligence {
   private String name = "HAL-9000";
   protected Strategy strategy = new RandomStrategy();

@@ -3,6 +3,7 @@ package nz.ac.auckland.se281;
 import nz.ac.auckland.se281.Main.Choice;
 import nz.ac.auckland.se281.Main.Difficulty;
 
+/** Factory design pattern to create different AI instances. */
 public class ArtificialIntelligenceFactory {
 
   /**
