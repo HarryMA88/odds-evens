@@ -30,6 +30,10 @@ public class Game {
    * starts a new round within the game.
    */
   public void play() {
+    if (round == -1) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
     // display round and ask for input
     round++;
     MessageCli.START_ROUND.printMessage(String.valueOf(round));
