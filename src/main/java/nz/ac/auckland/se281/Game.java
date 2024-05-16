@@ -85,7 +85,10 @@ public class Game {
     ai.addFingers(fingers);
   }
 
-  public void endGame() {}
+  public void endGame() {
+    round = -1;
+    ai = null;
+  }
 
   public void showStats() {}
 
