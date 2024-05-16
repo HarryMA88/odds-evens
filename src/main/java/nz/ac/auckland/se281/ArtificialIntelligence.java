@@ -2,7 +2,6 @@ package nz.ac.auckland.se281;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import nz.ac.auckland.se281.Main.Choice;
 
 public abstract class ArtificialIntelligence {
@@ -15,7 +14,7 @@ public abstract class ArtificialIntelligence {
 
   /**
    * constructor for Artificial Intelligence.
-   * 
+   *
    * @param choice the players choice (opposite of what AI needs to win)
    */
   public ArtificialIntelligence(Choice choice) {
@@ -24,7 +23,7 @@ public abstract class ArtificialIntelligence {
 
   /**
    * getter for AI's name.
-   * 
+   *
    * @return name of the AI
    */
   public String getName() {
@@ -33,7 +32,7 @@ public abstract class ArtificialIntelligence {
 
   /**
    * setter for AI's strategy.
-   * 
+   *
    * @param strategy strategy to set
    */
   public void setStrategy(Strategy strategy) {
@@ -42,7 +41,7 @@ public abstract class ArtificialIntelligence {
 
   /**
    * getter for AI's fingers.
-   * 
+   *
    * @return the amount of fingers the AI chose for this round
    */
   public int getFingers() {
@@ -51,7 +50,7 @@ public abstract class ArtificialIntelligence {
 
   /**
    * adds the opponents fingers choice to the AI's memory.
-   * 
+   *
    * @param fingers the number of fingers the opponent chose
    */
   public void addFingers(int fingers) {
@@ -70,9 +69,6 @@ public abstract class ArtificialIntelligence {
     this.wonPreviousRound = wonPreviousRound;
   }
 
-  /**
-   * function to let the AI play a round.
-   */
+  /** function to let the AI play a round. */
   public abstract void play();
-
 }

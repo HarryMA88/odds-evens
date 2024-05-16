@@ -8,7 +8,7 @@ public interface Strategy {
   
   /**
    * getter for fingers chosen by strategy.
-   * 
+   *
    * @return fingers chosen by strategy
    */
   public int getFingers();

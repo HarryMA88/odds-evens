@@ -12,7 +12,7 @@ public class Game {
 
   /**
    * starts a new game with chosen difficulty and win condition.
-   * 
+   *
    * @param difficulty difficulty for AI
    * @param choice whether the player wants to be ODD or EVEN
    * @param options player name
