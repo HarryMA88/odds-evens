@@ -94,7 +94,9 @@ public class Game {
   }
 
   public void showStats() {
-
+    if (round == -1) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+    }
   }
 
 }
