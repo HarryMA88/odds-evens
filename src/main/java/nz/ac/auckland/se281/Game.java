@@ -86,10 +86,15 @@ public class Game {
   }
 
   public void endGame() {
+    if (round == -1) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+    }
     round = -1;
     ai = null;
   }
 
-  public void showStats() {}
+  public void showStats() {
+
+  }
 
 }
