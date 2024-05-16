@@ -107,5 +107,6 @@ public class Game {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
     }
+    MessageCli.PRINT_PLAYER_WINS.printMessage(name, String.valueOf(PlayerWins), String.valueOf(BotWins));
   }
 }
