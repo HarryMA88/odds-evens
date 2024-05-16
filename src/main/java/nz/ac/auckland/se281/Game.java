@@ -102,7 +102,9 @@ public class Game {
       MessageCli.PRINT_END_GAME.printMessage(name);
     } else if (PlayerWins < BotWins) {
       MessageCli.PRINT_END_GAME.printMessage(ai.getName());
-    } 
+    } else {
+      MessageCli.PRINT_END_GAME_TIE.printMessage();
+    }
     round = -1;
     PlayerWins = -1;
     BotWins = -1;
