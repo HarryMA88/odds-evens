@@ -9,6 +9,8 @@ public class Game {
   private String name;
   private ArtificialIntelligence ai;
   private Choice choice;
+  private int PlayerWins = -1;
+  private int BotWins = -1;
 
   /**
    * starts a new game with chosen difficulty and win condition.
@@ -20,15 +22,15 @@ public class Game {
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     round = 0;
+    PlayerWins = 0;
+    BotWins = 0;
     name = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(name);
     ai = ArtificialIntelligenceFactory.createArtificialIntelligence(difficulty, choice);
     this.choice = choice;
   }
 
-  /**
-   * starts a new round within the game.
-   */
+  /** starts a new round within the game. */
   public void play() {
     if (round == -1) {
       MessageCli.GAME_NOT_STARTED.printMessage();
@@ -68,17 +70,21 @@ public class Game {
       if (Utils.isEven(sum)) {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
         ai.setWonPreviousRound(false);
+        PlayerWins++;
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "ODD", ai.getName());
         ai.setWonPreviousRound(true);
+        BotWins++;
       }
     } else {
       if (Utils.isOdd(sum)) {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), choice.toString(), name);
         ai.setWonPreviousRound(false);
+        PlayerWins++;
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "EVEN", ai.getName());
         ai.setWonPreviousRound(true);
+        BotWins++;
       }
     }
     // adds the players fingers to the AI's memory
@@ -88,15 +94,18 @@ public class Game {
   public void endGame() {
     if (round == -1) {
       MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
     }
     round = -1;
+    PlayerWins = -1;
+    BotWins = -1;
     ai = null;
   }
 
   public void showStats() {
     if (round == -1) {
       MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
     }
   }
-
 }
