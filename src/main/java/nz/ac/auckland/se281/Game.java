@@ -97,6 +97,10 @@ public class Game {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
     }
+    showStats();
+    if (PlayerWins > BotWins) {
+      MessageCli.PRINT_END_GAME.printMessage(name);
+    }
     round = -1;
     PlayerWins = -1;
     BotWins = -1;
